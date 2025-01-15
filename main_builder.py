@@ -1327,39 +1327,12 @@ if __name__ == '__main__':
     aco_population = 250                # кол-во муравьев
     aco_iterations = 70                 # итераций (выбирается лучшая)
 
-    elements = [
-        Element("L1", 9999, 1),
-        Element("L2", 9999, 1),
-        Element("L3", 9999, 2),
-        Element("L4", 9999, 3),
-        Element("T4", 9999, 4),
-        Element("T8", 9999, 4),
-        Element("B1", 9999, 6),
-    ]
-
-    route = [ # для тестов
-        RoutePoint(0, 0, 10),
-        # RoutePoint(11, 26, 10),
-        RoutePoint(14, 12, 10),
-        # RoutePoint(53, 22, 10),
-        RoutePoint(30, 15, 20),
-        RoutePoint(41, 32, 20),
-        RoutePoint(1, 1, 15),
-        RoutePoint(2, 2, 15),
-        RoutePoint(10, 26, 15),
-        # RoutePoint(11, 26, 15),
-        # RoutePoint(16, 23, 15),
-        RoutePoint(0, 0, 10),
-    ]
-
-
+    """чтение данных из файла"""
     try:
         elements, route, order = read_input(filename)
         valid_input = True
     except ValueError as err:
         print(f"[Ошибка чтения файла] {err}")
-
-
 
     app = Dash(__name__)
     my_dash()
